@@ -1,1 +1,24 @@
 <h1><%=@entry.title %></h1>
+<p><%=@entry.content%></p>
+<%unless @entry.comments.blank? %>
+  <h3>Comments</h3>
+  <ul>
+    <% @entry.comments.each do |comment|%>
+      <li>
+        <h4>Comment by <%=h comment.user %></h4>
+        <p><%=h comment.email %></p>
+        <%= image_tag comment.gravatar_url %>
+        <p><%=h comment.body %></p>
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>
+<% form_for @comment || Comment.new, :url => add_comment_path(@entry) do |f| -%>
+  <%= f.label :body, "New Comment:" %>
+  <%= f.text_field :body %>
+  <%= f.label :user, "User" %>
+  <%= f.text_field :user %>
+  <%= f.label :email, "Email" %>
+  <%= f.text_field :email %>
+  <%= f.submit "Comment" %>
+<% end -%>

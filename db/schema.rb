@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100410235817) do
+ActiveRecord::Schema.define(:version => 20100411033339) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "user"
+    t.text     "body"
+    t.integer  "entry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+  end
 
   create_table "entries", :force => true do |t|
     t.string   "title"
