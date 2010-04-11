@@ -1,0 +1,55 @@
+# Logfile created on Sun Apr 11 15:00:33 +1000 2010
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 15:17:25) [GET]
+  [4;36;1mEntry Load (0.4ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Completed in 83ms (View: 80, DB: 0) | 200 OK [http://www.example.com/]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 15:20:45) [GET]
+  [4;36;1mEntry Load (0.5ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Completed in 83ms (View: 80, DB: 0) | 200 OK [http://www.example.com/]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2010-04-11 15:20:45) [GET]
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/entries
+Rendering entries/index
+Completed in 24ms (View: 22, DB: 0) | 200 OK [http://www.example.com/entries]
+
+
+Processing EntriesController#new (for 127.0.0.1 at 2010-04-11 15:20:45) [GET]
+Rendering template within layouts/entries
+Rendering entries/new
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://www.example.com/entries/new]
+
+
+Processing EntriesController#create (for 127.0.0.1 at 2010-04-11 15:20:45) [POST]
+  Parameters: {"commit"=>"Create", "entry"=>{"title"=>"My fancy new post", "content"=>"Some content blah blah blah", "user"=>""}}
+  [4;36;1mEntry Create (0.5ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "content", "user") VALUES('2010-04-11 05:20:45', 'My fancy new post', '2010-04-11 05:20:45', 'Some content blah blah blah', '')[0m
+Redirected to http://www.example.com/entries/1-my-fancy-new-post
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/entries]
+
+
+Processing EntriesController#show (for 127.0.0.1 at 2010-04-11 15:20:45) [GET]
+  Parameters: {"id"=>"1-my-fancy-new-post"}
+  [4;35;1mEntry Load (0.3ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+Rendering template within layouts/entries
+Rendering entries/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://www.example.com/entries/1-my-fancy-new-post]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 15:20:45) [GET]
+  [4;36;1mEntry Load (0.4ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (74.2ms)
+Completed in 76ms (View: 75, DB: 0) | 200 OK [http://www.example.com/]
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 15:20:45) [GET]
+  Parameters: {"id"=>"1-my-fancy-new-post"}
+  [4;35;1mEntry Load (0.3ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+Rendering blog/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".entry_id = 1) [0m
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://www.example.com/blog/1-my-fancy-new-post]

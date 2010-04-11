@@ -1,0 +1,56 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "entries" [0m
+
+
+Processing EntriesController#create (for 0.0.0.0 at 2010-04-11 15:00:16) [POST]
+  Parameters: {"entry"=>{}}
+  [4;35;1mEntry Create (0.4ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "content", "user") VALUES('2010-04-11 05:00:16', NULL, '2010-04-11 05:00:16', NULL, NULL)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "entries" [0m
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+
+
+Processing EntriesController#destroy (for 0.0.0.0 at 2010-04-11 15:00:16) [DELETE]
+  Parameters: {"id"=>"980190962-mystring"}
+  [4;36;1mEntry Load (0.2ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+  [4;35;1mEntry Destroy (0.3ms)[0m   [0mDELETE FROM "entries" WHERE "id" = 980190962[0m
+Redirected to http://test.host/entries
+Completed in 2ms (DB: 3) | 302 Found [http://test.host/entries/980190962-mystring]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "entries" [0m
+  [4;35;1mEntry Load (0.3ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+
+
+Processing EntriesController#edit (for 0.0.0.0 at 2010-04-11 15:00:16) [GET]
+  Parameters: {"id"=>"980190962-mystring"}
+  [4;36;1mEntry Load (0.2ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+Rendering template within layouts/entries
+Rendering entries/edit
+Completed in 84ms (View: 84, DB: 1) | 200 OK [http://test.host/entries/980190962-mystring/edit]
+
+
+Processing EntriesController#index (for 0.0.0.0 at 2010-04-11 15:00:17) [GET]
+  [4;35;1mEntry Load (0.4ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/entries
+Rendering entries/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://test.host/entries]
+
+
+Processing EntriesController#new (for 0.0.0.0 at 2010-04-11 15:00:17) [GET]
+Rendering template within layouts/entries
+Rendering entries/new
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://test.host/entries/new]
+  [4;36;1mEntry Load (0.3ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+
+
+Processing EntriesController#show (for 0.0.0.0 at 2010-04-11 15:00:17) [GET]
+  Parameters: {"id"=>"980190962-mystring"}
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+Rendering template within layouts/entries
+Rendering entries/show
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://test.host/entries/980190962-mystring]
+  [4;36;1mEntry Load (0.3ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+
+
+Processing EntriesController#update (for 0.0.0.0 at 2010-04-11 15:00:17) [PUT]
+  Parameters: {"id"=>"980190962-mystring", "entry"=>{}}
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 980190962) [0m
+Redirected to http://test.host/entries/980190962-mystring
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/entries/980190962-mystring?]
