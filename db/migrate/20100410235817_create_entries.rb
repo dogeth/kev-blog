@@ -6,7 +6,9 @@ class CreateEntries < ActiveRecord::Migration
       t.string :user
 
       t.timestamps
-    end
+    end                     
+        
+    
   end
 
   def self.down

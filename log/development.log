@@ -30,3 +30,399 @@ Processing EntriesController#index (for 127.0.0.1 at 2010-04-11 09:59:30) [GET]
 Rendering template within layouts/entries
 Rendering entries/index
 Completed in 36ms (View: 31, DB: 0) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2010-04-11 10:15:36) [GET]
+  [4;35;1mEntry Load (0.4ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/entries
+Rendering entries/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#new (for 127.0.0.1 at 2010-04-11 10:15:38) [GET]
+Rendering template within layouts/entries
+Rendering entries/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/entries/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 10:16:22) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 10:16:31) [GET]
+
+ActionController::RoutingError (No route matches "/blogs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 10:19:47) [GET]
+
+ActionController::RoutingError (No route matches "/blogs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 10:19:52) [GET]
+
+ActionController::RoutingError (No route matches "/blog/index" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 10:19:57) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 10:21:16) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEntries (20100410235817)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("entries")[0m
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:21:40) [GET]
+  [4;36;1mEntry Load (0.5ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:26:55) [GET]
+  [4;35;1mEntry Load (0.4ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/blog]
+  [4;36;1mEntry Create (0.5ms)[0m   [0;1mINSERT INTO "entries" ("created_at", "title", "updated_at", "content", "user") VALUES('2010-04-11 00:27:44', '1st entry', '2010-04-11 00:27:44', 'hello world', 'kev')[0m
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:27:47) [GET]
+  [4;36;1mEntry Load (0.6ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+
+ActionView::TemplateError (Missing template entries/_entry.erb in view path app/views) on line #4 of app/views/blog/index.html.erb:
+1: <h1>Blog</h1>
+2: 
+3: <ul>     
+4: <%= render @entries -%>
+5: </ul>       
+
+    app/views/blog/index.html.erb:4
+
+Rendered rescues/_trace (109.7ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:28:28) [GET]
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.3ms)
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:30:09) [GET]
+  [4;36;1mEntry Load (0.6ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (213.8ms)
+Completed in 223ms (View: 219, DB: 1) | 200 OK [http://localhost/blog]
+  [4;35;1mEntry Create (0.8ms)[0m   [0mINSERT INTO "entries" ("created_at", "title", "updated_at", "content", "user") VALUES('2010-04-11 00:31:15', '2nd entry', '2010-04-11 00:31:15', 'hello world again', 'kev')[0m
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:31:17) [GET]
+  [4;35;1mEntry Load (0.7ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:31:30) [GET]
+  [4;36;1mEntry Load (0.6ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.9ms)
+Rendered entries/_entry (0.2ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:40:15) [GET]
+  [4;35;1mEntry Load (0.7ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.2ms)
+Rendered entries/_entry (0.2ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 10:40:20) [GET]
+  Parameters: {"id"=>"1"}
+
+NoMethodError (undefined method `param' for #<BlogController:0x10434daf0>):
+  app/controllers/blog_controller.rb:9:in `show'
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 10:40:41) [GET]
+  Parameters: {"id"=>"1"}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/blog_controller.rb:9:in `params'
+  app/controllers/blog_controller.rb:9:in `show'
+
+Rendered rescues/_trace (110.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 10:42:07) [GET]
+  Parameters: {"id"=>"1"}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/blog_controller.rb:9:in `params'
+  app/controllers/blog_controller.rb:9:in `show'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 10:42:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (0.2ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = '--- :id
+') [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Entry with ID=id):
+  app/controllers/blog_controller.rb:9:in `show'
+
+Rendered rescues/_trace (118.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mEntry Load (0.5ms)[0m   [0;1mSELECT * FROM "entries" [0m
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 10:44:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template blog/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 10:45:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (0.3ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+Rendering blog/show
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/blog/show/1]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:45:31) [GET]
+  [4;35;1mEntry Load (0.7ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.4ms)
+Rendered entries/_entry (0.3ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:48:52) [GET]
+  [4;36;1mEntry Load (0.6ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.1ms)
+Rendered entries/_entry (0.2ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:50:57) [GET]
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.0ms)
+Rendered entries/_entry (0.2ms)
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:52:20) [GET]
+  [4;36;1mEntry Load (0.7ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+
+ActionView::TemplateError (wrong number of arguments (2 for 1)) on line #2 of app/views/entries/_entry.html.erb:
+1: <li>
+2: 	<h2><%= link_to h entry.title, :controller => "blog" %></h2>
+3: 	<p><%=h entry.content %></p>
+4: 	<p>Created by <%=h entry.user%> at <%=h entry.created_at%></p>
+5: </li>
+
+    app/views/entries/_entry.html.erb:2:in `h'
+    app/views/entries/_entry.html.erb:2
+    app/views/blog/index.html.erb:4
+
+Rendered rescues/_trace (62.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:52:48) [GET]
+  [4;35;1mEntry Load (0.7ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.3ms)
+Rendered entries/_entry (0.4ms)
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:53:03) [GET]
+  [4;36;1mEntry Load (0.6ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.2ms)
+Rendered entries/_entry (0.4ms)
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:54:21) [GET]
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.2ms)
+Rendered entries/_entry (0.4ms)
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 10:54:33) [GET]
+  [4;36;1mEntry Load (0.6ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.4ms)
+Rendered entries/_entry (0.6ms)
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 11:22:58) [GET]
+  [4;35;1mEntry Load (0.6ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+
+ActionView::TemplateError (Missing template entries/_entry.erb in view path app/views) on line #4 of app/views/blog/index.html.erb:
+1: <h1>Blog</h1>
+2: 
+3: <ul>     
+4: <%= render @entries -%>
+5: </ul>       
+6: 	
+
+    app/views/blog/index.html.erb:4
+
+Rendered rescues/_trace (53.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 11:23:20) [GET]
+  [4;36;1mEntry Load (0.7ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.5ms)
+Rendered entries/_entry (0.5ms)
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 11:23:23) [GET]
+  Parameters: {"id"=>"2-2nd-entry"}
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 2) [0m
+Rendering blog/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/blog/show/2-2nd-entry]
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 11:30:43) [GET]
+  [4;36;1mEntry Load (0.6ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (3.3ms)
+Rendered entries/_entry (0.5ms)
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 11:30:52) [GET]
+  Parameters: {"id"=>"2-2nd-entry"}
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 2) [0m
+Rendering blog/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/blog/2-2nd-entry]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 11:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/blogs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 11:31:09) [GET]
+  [4;36;1mEntry Load (0.7ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.9ms)
+Rendered entries/_entry (0.7ms)
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/blog]
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 11:31:28) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Entry without an ID):
+  app/controllers/blog_controller.rb:9:in `show'
+
+Rendered rescues/_trace (110.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 11:31:32) [GET]
+  [4;35;1mEntry Load (0.7ms)[0m   [0mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.7ms)
+Rendered entries/_entry (0.6ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/blogs]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-11 11:45:09) [GET]
+
+ActionController::RoutingError (No route matches "/blogs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing BlogController#index (for 127.0.0.1 at 2010-04-11 11:45:17) [GET]
+  [4;36;1mEntry Load (0.7ms)[0m   [0;1mSELECT * FROM "entries" ORDER BY created_at desc[0m
+Rendering blog/index
+Rendered entries/_entry (2.8ms)
+Rendered entries/_entry (0.6ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BlogController#show (for 127.0.0.1 at 2010-04-11 11:45:23) [GET]
+  Parameters: {"id"=>"2-2nd-entry"}
+  [4;35;1mEntry Load (0.2ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 2) [0m
+Rendering blog/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/blog/2-2nd-entry]

@@ -1,0 +1,5 @@
+<li>
+	<h2><%= link_to h(entry.title), blog_path(entry) %></h2>
+	<p><%=h entry.content %></p>
+	<p>Created by <%=h entry.user%> at <%=h entry.created_at%></p>
+</li>
