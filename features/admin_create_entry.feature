@@ -15,3 +15,5 @@ Feature: Admin - Create an entry
     Then I should see "My fancy new post"
     When I follow "My fancy new post"
     Then I should see "Some content blah blah blah"
+    
+    
